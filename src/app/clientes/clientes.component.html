@@ -1,0 +1,34 @@
+<div class="container">
+  <br>
+<h1>{{titulo}}</h1>
+  <br>
+<h2>{{prueba}}</h2>
+  <br>
+<button class="btn btn-info" type="button" [routerLink]="['/clientes/nuevo']">Nuevo Cliente</button>
+  <br><br>
+<table class="table table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Email</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Editar </th>
+        <th scope="col">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes">
+        <th scope="row">{{cliente.id}}</th>
+        <td>{{cliente.nombre}}</td>
+        <td>{{cliente.edad}}</td>
+        <td>{{cliente.telefono}}</td>
+        <td>{{cliente.email}}</td>
+        <td>{{cliente.estado}}</td>
+        <td> <button type="button"name="button" class="btn btn-primary" [routerLink]= "['/clientes/form', cliente.id]"> Editar</button> </td>
+        <td> <button class="btn btn-danger" (click)= "delete(cliente)" >Eliminar</button> </td>
+    </tbody>
+</table>
+</div>
